@@ -3,16 +3,32 @@ package com.bullach.android.bakingapp.data.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Ingredient implements Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("quantity")
     private double quantity;
+
+    @SerializedName("measure")
     private String measure;
+
+    @SerializedName("ingredient")
     private String ingredient;
 
     public Ingredient() {
     }
 
+    @Ignore
     private Ingredient(Parcel in) {
         id = in.readInt();
         quantity = in.readDouble();

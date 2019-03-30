@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    tools:context=".ui.fragments.StepDetailFragment">
+
+    <data>
+
+        <variable
+            name="step"
+            type="com.bullach.android.bakingapp.data.models.Step" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Previous step button -->
+            <Button
+                android:id="@+id/buttonPrev"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/vertical_margin_half"
+                android:layout_marginLeft="@dimen/vertical_margin_half"
+                android:contentDescription="@string/steps_detail_prev_button"
+                android:drawableStart="@drawable/ic_navigate_before_black_24dp"
+                android:drawableLeft="@drawable/ic_navigate_before_black_24dp"
+                app:layout_constraintBottom_toTopOf="@id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Displays the current step and total steps -->
+            <TextView
+                android:id="@+id/tvStepOf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/flPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/tools_step_total" />
+
+            <!-- Next step button -->
+            <Button
+                android:id="@+id/buttonNext"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/vertical_margin_half"
+                android:layout_marginRight="@dimen/vertical_margin_half"
+                android:contentDescription="@string/steps_detail_next_button"
+                android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                app:layout_constraintBottom_toTopOf="@id/barrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="48dp" />
+
+            <FrameLayout
+                android:id="@+id/flPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+                app:layout_constraintDimensionRatio="H,3:2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier">
+
+                <!-- Displays a video -->
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:controller_layout_id="@layout/custom_playback_control"
+                    app:fastforward_increment="3000"
+                    app:rewind_increment="3000"
+                    app:show_timeout="2000" />
+
+                <!-- Displays fallback image if there is no video or image thumbnail -->
+                <ImageView
+                    android:id="@+id/iv_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside" />
+            </FrameLayout>
+
+            <!-- Displays the recipe step instruction -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/vertical_margin_half"
+                android:background="@drawable/item_border"
+                android:padding="@dimen/small_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flPlayer"
+                tools:text="@string/tools_step_description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</layout>

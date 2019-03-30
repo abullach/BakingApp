@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ingredient"
+            type="com.bullach.android.bakingapp.data.models.Ingredient" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/item_border"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            style="@style/RecipeDetailsRecyclerViewStyle"
+            android:layout_marginTop="4dp"
+            android:text='@{String.format("%s %s", ingredient.quantity, ingredient.measure)}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 TBSP" />
+
+        <TextView
+            android:id="@+id/tvIngredientName"
+            style="@style/RecipeDetailsRecyclerViewStyle"
+            android:layout_marginBottom="8dp"
+            android:text="@{ingredient.ingredient}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuantity"
+            tools:text="Ingredient Flour" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

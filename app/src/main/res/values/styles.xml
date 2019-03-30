@@ -8,4 +8,63 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Style for the MainActivity's recipe titles -->
+    <style name="MainRecipeTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:padding">@dimen/middle_padding</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/biggest_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for the DetailsActivity's titles -->
+    <style name="DetailsTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/small_padding</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/biggest_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Style for the Ingredients and Steps section headers -->
+    <style name="SectionHeaderStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:textSize">@dimen/bigger_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Style for the RecipeDetailsActivity's RecyclerView items texts -->
+    <style name="RecipeDetailsRecyclerViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/bigger_text_size</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:layout_marginLeft">@dimen/margin_medium</item>
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+        <item name="android:layout_marginRight">@dimen/margin_medium</item>
+    </style>
+
+    <!-- Style for the Widget's title -->
+    <style name="WidgetTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/bigger_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

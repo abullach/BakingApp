@@ -3,17 +3,35 @@ package com.bullach.android.bakingapp.data.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Step implements Parcelable {
 
+    @PrimaryKey
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("shortDescription")
     private String shortDescription;
+
+    @SerializedName("description")
     private String description;
+
+    @SerializedName("videoURL")
     private String videoURL;
+
+    @SerializedName("thumbnailURL")
     private String thumbnailURL;
 
     public Step() {
     }
 
+    @Ignore
     private Step(Parcel in) {
         id = in.readInt();
         shortDescription = in.readString();

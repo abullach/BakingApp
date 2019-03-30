@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If smallest width is 600dp consider it a tablet -->
+    <bool name="isTablet">true</bool>
+    <!-- Number of columns for the GridLayout in the RecipeListActivity -->
+    <integer name="recipe_list_grid_spans">3</integer>
+</resources>

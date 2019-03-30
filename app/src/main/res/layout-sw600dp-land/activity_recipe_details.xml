@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".ui.activities.RecipeDetailsActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Recipe image -->
+                    <ImageView
+                        android:id="@+id/ivRecipeImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@+id/ingredients_list_fragment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Ingredients text label -->
+                    <TextView
+                        android:id="@+id/tvIngredientsTitle"
+                        style="@style/SectionHeaderStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/ingredients_list_header_title_content_description"
+                        android:text="@string/ingredients_list_header_title"
+                        app:layout_constraintBottom_toTopOf="@+id/ingredients_list_fragment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <!-- Ingredients fragment -->
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/ingredients_list_fragment"
+                        android:name="com.bullach.android.bakingapp.ui.fragments.IngredientsListFragment"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@+id/tvInstructionsTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivRecipeImage" />
+
+                    <!-- Instructions text label -->
+                    <TextView
+                        android:id="@+id/tvInstructionsTitle"
+                        style="@style/SectionHeaderStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/steps_list_header_title_content_description"
+                        android:text="@string/steps_list_header_title"
+                        app:layout_constraintBottom_toTopOf="@+id/steps_list_fragment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ingredients_list_fragment" />
+
+                    <!-- Steps fragment -->
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/steps_list_fragment"
+                        android:name="com.bullach.android.bakingapp.ui.fragments.StepsListFragment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvInstructionsTitle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Vertical guideline -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <!-- The frame layout is container for the StepDetailFragment -->
+        <FrameLayout
+            android:id="@+id/flStepDetail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

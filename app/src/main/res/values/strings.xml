@@ -1,3 +1,60 @@
 <resources>
     <string name="app_name">Baking App</string>
+
+    <!-- Strings for recipe list activity -->
+    <string name="recipe_list_image_content_description">The recipe image</string>
+    <string name="recipe_list_no_internet_connection">No network. \nPlease check your internet connection.</string>
+
+    <!-- Strings for ingredients list fragment -->
+    <string name="ingredients_list_header_title">Ingredients</string>
+    <string name="ingredients_list_header_title_content_description">Ingredients</string>
+
+    <!-- Strings for steps list fragment -->
+    <string name="steps_list_header_title">Instructions</string>
+    <string name="steps_list_header_title_content_description">Instructions</string>
+
+    <!-- Strings for steps detail fragment -->
+    <string name="steps_detail_header_title">Step %1$d of %2$d</string>
+    <string name="steps_detail_header_title_short">Step %1$d</string>
+    <string name="steps_detail_prev_button">Previous</string>
+    <string name="steps_detail_next_button">Next</string>
+    <string name="question_mark">�</string>
+    <string name="degree">\u00b0</string>
+
+    <!-- Strings for recipe widget -->
+    <string name="widget_title_text">Baking App</string>
+    <string name="widget_add_widget">Add widget</string>
+    <string name="widget_recipe_name">No recipe added.</string>
+    <string name="widget_recipe_id">Widget ID</string>
+    <string name="widget_empty_view_text">Widget will automatically be updated once you select a recipe in the app.</string>
+    <string name="widget_empty_view_image">Empty view placeholder image.</string>
+
+    <!-- Keys for Shared Preferences -->
+    <!-- Key name for accessing the private SharedPreferences file -->
+    <string name="pref_file_key" translatable="false">pref_recipe_file_key</string>
+    <!-- Key name for storing the recipe id in SharedPreferences -->
+    <string name="pref_recipe_id_key" translatable="false">pref_recipe_id</string>
+    <!-- Key name for storing the recipe name in SharedPreferences -->
+    <string name="pref_recipe_name_key" translatable="false">pref_recipe_name</string>
+    <!-- Key name for storing the list of ingredients in SharedPreferences -->
+    <string name="pref_ingredient_string_key" translatable="false">pref_ingredient_string</string>
+    <!-- Key name for storing the list of steps in SharedPreferences -->
+    <string name="pref_step_string_key" translatable="false">pref_step_string</string>
+    <!-- Key name for storing servings in SharedPreferences -->
+    <string name="pref_servings_key" translatable="false">pref_servings</string>
+    <!-- Key name for storing the image URL in SharedPreferences -->
+    <string name="pref_image_key" translatable="false">pref_image</string>
+
+    <!-- Strings for testing (XML tools) -->
+    <string name="tools_step_total">Step 3 of 9</string>
+    <string name="tools_step_description">Description</string>
+    <string name="tools_recipe_name">Recipe name</string>
+    <string name="tools_quantity">Quantity</string>
+    <string name="tools_measure">Measure</string>
+    <string name="tools_ingredient_name">Ingredient name</string>
+    <string name="tools_ingredient_servings">Servings: 8</string>
+    <string name="tools_direction_short_description">Short description</string>
+    <string name="tools_direction_long_description">Long description of the recipe</string>
+    <string name="tools_widget_text">Ingredient name (Quantity Measure)</string>
+    <string name="tools_empty_view">Empty view</string>
 </resources>

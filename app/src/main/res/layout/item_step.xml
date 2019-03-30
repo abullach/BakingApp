@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="java.lang.String" />
+        <variable
+            name="step"
+            type="com.bullach.android.bakingapp.data.models.Step" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/item_border">
+
+        <!-- Step ID -->
+        <TextView
+            android:id="@+id/tvStepId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vertical_margin"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text="@{String.valueOf(step.id)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="7" />
+
+        <!-- Short Description of the step -->
+        <TextView
+            android:id="@+id/tvStepShortDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/vertical_margin"
+            android:layout_marginStart="@dimen/vertical_margin"
+            android:textSize="17sp"
+            android:text="@{step.shortDescription}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_thumbnail"
+            app:layout_constraintStart_toEndOf="@+id/tvStepId"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Add heavy cream and vanilla." />
+
+        <!-- Play button -->
+        <ImageView
+            android:id="@+id/iv_play_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/vertical_margin"
+            android:layout_marginRight="@dimen/vertical_margin"
+            android:contentDescription="Play video"
+            android:tint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_thumbnail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Hide the thumbnail image of the step -->
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="@dimen/vertical_margin"
+            android:layout_height="@dimen/vertical_margin"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:contentDescription="Thumbnail"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_play_arrow"
+            app:layout_constraintStart_toEndOf="@+id/tvStepShortDescription"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
